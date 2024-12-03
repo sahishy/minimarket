@@ -1,0 +1,10 @@
+<IfModule mod_mime.c>
+  AddEncoding gzip .gz
+  AddEncoding gzip .unityweb
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(gz|unityweb)$">
+    Header set Content-Encoding gzip
+  </FilesMatch>
+</IfModule>
